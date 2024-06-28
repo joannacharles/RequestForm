@@ -1,8 +1,0 @@
-cmd line .net cli interface:
-ASP .net Core web API
-
-#injectable
-root
-services - singleton - instantiated when application is 
-disposed when app is 
- 
