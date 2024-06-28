@@ -1,0 +1,49 @@
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+    
+<main class="form-signin w-100 m-auto">
+  <form #requestForm="ngForm" (ngSubmit)="submitForm()" class="form-req"> 
+    <h1 class="h3 mb-3 fw-normal">Technical Request Form</h1>
+
+    <div class="form-floating">
+      <input name="requestemail" required email type="email" [(ngModel)]="model.Email" class="form-control" id="floatingEmail" placeholder="name@example.com" #email="ngModel">
+      <label for="floatingEmail">Email address</label>
+      <div *ngIf="email.invalid && email.touched" class="text-danger">
+        Invalid email address
+      </div>
+    </div>
+    <div class="form-floating">
+      <input name="description" type="text" [(ngModel)]="model.Description" class="form-control" id="floatingDescription" placeholder="description" required minlength="100" maxlength="1000" #description="ngModel">
+      <label for="floatingDescription">Description</label>
+      <div *ngIf="description.invalid && description.touched" class="text-danger">
+        Description should be between 100 and 1000 characters.
+      </div>
+    </div>
+    <div class="form-floating mb-3">
+      <input name="duedate" type="date" [(ngModel)]="model.DueDate" class="form-control" id="floatingDueDate" placeholder="Enter due date"  />
+      <label for="floatingDueDate">Due Date</label>
+      <div *ngIf="errors?.error?.errors?.DueDate" class="text-danger">
+        {{ errors.error.errors.DueDate[0] }}
+      </div>
+      <span asp-validation-for="DueDate" class="text-danger"></span>
+  </div>
+    
+    <button class="btn btn-primary w-100 py-2 mb-2" type="submit">Submit</button>
+    <button *ngIf="!showList" class="btn btn-success w-100 py-2" (click)="toggle()">View Valid Requests </button>
+    <button *ngIf="showList" class="btn btn-success w-100 py-2" (click)="toggle()">Hide Requests </button>
+    <ul *ngIf="showList" class="request-list">
+      <ul *ngIf="showList">
+        <li *ngFor="let request of requests">
+          <p>Email: {{ request.email }}</p>
+          <p>Description: {{ request.description }}</p>
+          <p>Due Date: {{  request.dueDate | date:'fullDate'}}</p>
+        </li>
+      </ul>
+    </ul>
+
+  </form>
+</main>
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    
+
+<span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body>
