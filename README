@@ -33,59 +33,11 @@ cd ../client
 ng serve
 This command starts the Angular development server.
 
-###Access the Application
+### Access the Application
 Open your web browser and navigate to: http://localhost:4200/
 
 
-
-It looks like you're preparing setup instructions for your .NET and Angular web application. Here's a refined version of your instructions with a few corrections and improvements:
-
-My Project
-Project Overview
-This project is a web application built with .NET for the backend and Angular for the frontend. It allows users to submit support requests and view them.
-
-Prerequisites
-.NET SDK version 7.0.305
-Node.js version 18.13.0
-Angular CLI version 17.3.8
-Clone the Repository
-sh
-Copy code
-git clone https://github.com/joannacharles/RequestForm
-Setup Instructions
-Backend Setup:
-
-sh
-Copy code
-cd RequestForm/API
-dotnet restore
-Frontend Setup:
-
-sh
-Copy code
-cd ../client
-npm install
-Run the Application
-Run the Server:
-
-sh
-Copy code
-cd ../API
-dotnet watch run
-This command starts the .NET server and watches for changes.
-
-Run the Client:
-
-sh
-Copy code
-cd ../client
-ng serve
-This command starts the Angular development server.
-
-Access the Application
-Open your web browser and navigate to: http://localhost:4200/
-
-###Notes:
+### Notes:
 Ensure you have the correct versions of .NET SDK, Node.js, and Angular CLI installed as specified in the prerequisites.
 Replace joannacharles/RequestForm with your actual repository URL.
 Make sure to run dotnet restore and npm install in their respective directories (API for .NET and client for Angular).
